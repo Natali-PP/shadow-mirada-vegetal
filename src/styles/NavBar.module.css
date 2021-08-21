@@ -1,0 +1,12 @@
+.kumarOne{
+  font-family: 'Kumar One', cursive;
+}
+
+.spaceGrot{
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase
+}
+
+.fixedNav{
+  position:fixed;
+}
