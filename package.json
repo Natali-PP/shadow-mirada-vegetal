@@ -17,12 +17,12 @@
     "react-dom": "^16.12.0",
     "react-markdown": "^4.2.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^3.4.1",
     "three": "^0.131.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run server && react-scripts start",
+    "build": "npm run server && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node public/main.js"
