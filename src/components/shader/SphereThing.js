@@ -3,7 +3,7 @@ import * as THREE from "three"
 import React, { useRef, useMemo } from "react"
 //import SimplexNoise from "simplex-noise"
 import { useFrame, useLoader } from "@react-three/fiber"
-import bg from "./seamless1.png"
+import bg from "./seamless2.png"
 import "./ShinyMaterial.js"
 import { Sphere } from "@react-three/drei"
 
