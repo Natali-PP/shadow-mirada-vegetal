@@ -30,7 +30,7 @@ function CardGradient(props) {
           //margin="auto"
           //src="https://picsum.photos/id/237/250/250"
           src={image}
-          alt="Woman paying for a purchase"
+          alt={product}
           //objetFit="contain"
         />
       <Stack
