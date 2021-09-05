@@ -9,10 +9,11 @@ import {
   Button,
   Stack
 } from "@chakra-ui/react";
-
+import styles from '../styles/components/cardGradient.module.css'
 function CardGradient(props) {
-  const { product, summary, longLine, bgradient } = props;
+  const { product, summary, longLine, bgradient, image } = props;
 
+  console.log(image)
   return (
     <Box
       p={8}
@@ -23,14 +24,15 @@ function CardGradient(props) {
       bgGradient={bgradient}
       h={72}
     >
-      {/*<AspectRatio ratio={1 / 1}>
-        <Image
-          maxWidth="1000px"
-          margin="auto"
-          src="https://picsum.photos/id/237/250/250"
+        <img
+          className={styles.imageCover}
+          //maxWidth="1000px"
+          //margin="auto"
+          //src="https://picsum.photos/id/237/250/250"
+          src={image}
           alt="Woman paying for a purchase"
+          //objetFit="contain"
         />
-      </AspectRatio>*/}
       <Stack
         align={{ base: "center", md: "stretch" }}
         textAlign={{ base: "center", md: "left" }}
@@ -40,9 +42,10 @@ function CardGradient(props) {
         <Text
           fontWeight="bold"
           textTransform="uppercase"
-          fontSize="lg"
+          fontSize="4xl"
           letterSpacing="wide"
-          color="teal.600"
+          //color="teal.600"
+          className={styles.cardText}
         >
           {product}
         </Text>
@@ -59,9 +62,9 @@ function CardGradient(props) {
         <Text my={2} color="gray.500">
           {longLine}
         </Text>
-        <Button maxWidth="100px" my={2}>
+        {/*<Button maxWidth="100px" my={2}>
           Click me!
-        </Button>
+        </Button>*/}
       </Stack>
     </Box>
   );
