@@ -1,11 +1,14 @@
 import React from "react"
+import {Flex,Center,Text} from '@chakra-ui/react'
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <Flex align='center' justify='center' py={8}>
+            <Center>
             <hr/>
-            <p>&copy; Mirada Vegetal by Karen y Natali {new Date().getFullYear()}</p>
-        </div>
+            <Text> Proudly made by Karen y Natali &copy;{new Date().getFullYear()}</Text>
+                </Center>
+        </Flex>
     )
 }
 

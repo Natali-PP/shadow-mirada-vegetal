@@ -11,6 +11,7 @@ import SphereThing from "../components/shader/SphereThing.js";
 import Effects from "../components/shader/Effects.js";
 import Hojas from "../styles/largas.png";
 import { motion } from "framer-motion";
+import useWindowDimensions from '../utils/useWindowDimensions.js'
 
 const dataList = [
   {
@@ -43,7 +44,14 @@ const dataList = [
   },
 ];
 
+const setFontWidth = (width) =>{
+    if (width<520) return "70px"
+    else if (width>521 && width<1000) return "120px" 
+    else return "150px"
+}
+
 const Home = () => {
+  const { height, width } = useWindowDimensions();
   return (
     <div>
       <Layout>
@@ -64,8 +72,10 @@ const Home = () => {
                                         letterSpacing: "10px",
                                         fontFamily: 'Kumar One',
                                                     //fontFamily: "Space Grotesk",
-                                        fontSize: "150px",
+                                        //fontSize: `${width<520} ? "70px" : ${width>521 && width<1000} ? "120px": "150px" }`,
+                                        fontSize: `${setFontWidth(width)}`,
                                         pointerEvents: "none",
+                                        zIndex:2,
                                     }}
                                 >
                                     Mirada Vegetal

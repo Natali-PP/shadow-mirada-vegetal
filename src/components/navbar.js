@@ -6,8 +6,8 @@ import styles from '../styles/NavBar.module.css'
 const MenuItem = ({ children, isLast, to = '/' }) => {
   return (
     <Text
-      mb={{ base: isLast ? 0 : 2, sm: 0 }}
-      mr={{ base: 0, sm: isLast ? 0 : 8 }}
+      mb={{ base: isLast ? 0 : 12}}
+      mr={{ base: 0 }}
       display="block"
       className={styles.spaceGrot}
     >
@@ -15,42 +15,52 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
     </Text>
   );
 };
+
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const toggleMenu = () => setShow(!show);
   return (
     <Flex
       py={8}
-      px={4}
+      //px={4}
       as="nav"
       align="center"
       justify="space-between"
       wrap="wrap"
       w="100%"
       h={24}
-      bg="transparent"
-      color="black"
+      //bg={show ? "pink.500" : "transparent"}
+      bgGradient={show ? 'linear(to-r, green.200, pink.500)' : 'transparent'}
+      //color={show ? "green.300" : "black"}
+      color='black'
       className={styles.fixedNav}
     >
-      <Box w="200px">
+      <Box w="200px" px={4}>
         <Text fontSize="lg" fontWeight="bold">
           Mirada Vegetal
         </Text>
       </Box>
 
-      <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
+      <Box display={{ base: 'block'}} onClick={toggleMenu} px={4}>
         {show ? <CloseIcon /> : <HamburgerIcon />}
       </Box>
 
       <Box
-        display={{ base: show ? 'block' : 'none', md: 'block' }}
-        flexBasis={{ base: '100%', md: 'auto' }}
+        display={{ base: show ? 'block' : 'none'}}
+        flexBasis={{ base: '100%'}}
+        bgGradient='linear(to-r, green.200, pink.500)'
+        color="black"
+        fontWeight="bold"
+        fontSize="lg"
+        //h="99vh"
       >
         <Flex
           align="center"
-          justify={['center', 'space-between', 'flex-end', 'flex-end']}
-          direction={['column', 'row', 'row', 'row']}
-          pt={[4, 4, 0, 0]}
+          justify={['center']}
+          //direction={['column', 'row', 'row', 'row']}
+          direction={'column'}
+          py={[2, 2, 0, 0]}
+          h="100vh"
         >
           <MenuItem to="/">Home</MenuItem>
           <MenuItem to="/about">Nosotrxs</MenuItem>

@@ -13,16 +13,18 @@ import styles from '../styles/components/cardGradient.module.css'
 function CardGradient(props) {
   const { product, summary, longLine, bgradient, image } = props;
 
-  console.log(image)
   return (
     <Box
-      p={8}
-      display={{ md: "flex" }}
+      p={4}
+      display={{ base: "flex" }}
+      flexDirection={{base:"column",md:"row"}}
+      align={{ base: "center", md: "stretch" }}
       //maxWidth="8xl"
       //borderWidth={1}
       margin={4}
       bgGradient={bgradient}
-      h={72}
+      w="90%"
+      //h={72}
     >
         <img
           className={styles.imageCover}
@@ -42,7 +44,7 @@ function CardGradient(props) {
         <Text
           fontWeight="bold"
           textTransform="uppercase"
-          fontSize="4xl"
+          fontSize={{ base: "2xl", md: "4xl" }}
           letterSpacing="wide"
           //color="teal.600"
           className={styles.cardText}
@@ -59,7 +61,7 @@ function CardGradient(props) {
         >
           {summary}
         </Link>
-        <Text my={2} color="gray.500">
+        <Text my={2} color="gray.700">
           {longLine}
         </Text>
         {/*<Button maxWidth="100px" my={2}>
