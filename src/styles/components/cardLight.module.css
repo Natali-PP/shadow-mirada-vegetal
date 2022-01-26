@@ -1,0 +1,6 @@
+.borderGradient {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(90deg, rgba(203,255,137,1) 0%, rgba(132,233,255,1) 40%, rgba(187,54,182,1) 80%);;
+}
