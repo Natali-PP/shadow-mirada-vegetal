@@ -10,6 +10,7 @@ import {
   Stack
 } from "@chakra-ui/react";
 import styles from '../styles/components/cardGradient.module.css'
+
 function CardGradient(props) {
   const { product, summary, longLine, bgradient, image } = props;
 
@@ -42,12 +43,13 @@ function CardGradient(props) {
         ml={{ md: 6 }}
       >
         <Text
-          fontWeight="bold"
+          //fontWeight="bold"
           textTransform="uppercase"
           fontSize={{ base: "2xl", md: "4xl" }}
           letterSpacing="wide"
-          //color="teal.600"
+          color="red.600"
           className={styles.cardText}
+          //style={{fontFamily: 'Kumar One', color:'red'}}
         >
           {product}
         </Text>
@@ -64,9 +66,6 @@ function CardGradient(props) {
         <Text my={2} color="gray.700">
           {longLine}
         </Text>
-        {/*<Button maxWidth="100px" my={2}>
-          Click me!
-        </Button>*/}
       </Stack>
     </Box>
   );
