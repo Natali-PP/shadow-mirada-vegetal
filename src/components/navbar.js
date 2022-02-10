@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import styles from '../styles/NavBar.module.css' 
+import image1 from '../assets/nav-group1.svg';
+import image2 from '../assets/nav-group2.svg';
+
 const MenuItem = ({ children, isLast, to = '/' }) => {
   return (
     <Text
@@ -29,10 +32,12 @@ const NavBar = (props) => {
       wrap="wrap"
       w="100%"
       h={24}
+
+
       //bg={show ? "pink.500" : "transparent"}
-      bgGradient={show ? 'linear(to-r, green.200, pink.500)' : 'transparent'}
+      bgGradient={show ? 'linear(to-r, #0b110d, pink.500)' : 'transparent'}
       //color={show ? "green.300" : "black"}
-      color='black'
+      //color='black'
       className={styles.fixedNav}
     >
       <Box w="200px" px={4}>
@@ -48,10 +53,10 @@ const NavBar = (props) => {
       <Box
         display={{ base: show ? 'block' : 'none'}}
         flexBasis={{ base: '100%'}}
-        bgGradient='linear(to-r, green.200, pink.500)'
-        color="black"
+        bgGradient='linear(to-r, #0B110D, pink.500)'
+        //color="black"
         fontWeight="bold"
-        fontSize="lg"
+        fontSize="3xl"
         //h="99vh"
       >
         <Flex
@@ -61,6 +66,11 @@ const NavBar = (props) => {
           direction={'column'}
           py={[2, 2, 0, 0]}
           h="100vh"
+          className={styles.bgFlash}
+          //backgroundImage={image1, image2}
+          //backgroundPosition={"center","center"}
+          //backgroundRepeat="no-repeat"
+          //bgSize="cover"
         >
           <MenuItem to="/">Home</MenuItem>
           <MenuItem to="/about">Nosotrxs</MenuItem>

@@ -4,10 +4,17 @@
 
 .spaceGrot{
   font-family: 'Space Grotesk', sans-serif;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .fixedNav{
   position:fixed;
   z-index:116289763;
+}
+
+.bgFlash{
+  background-image:url(../assets/nav-group1-1.svg),url(../assets/nav-group2.svg);
+  background-position:center, center;
+  background-repeat:no-repeat,no-repeat;
+  background-size:cover,cover;
 }
