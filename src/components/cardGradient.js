@@ -47,7 +47,7 @@ function CardGradient(props) {
           textTransform="uppercase"
           fontSize={{ base: "2xl", md: "4xl" }}
           letterSpacing="wide"
-          color="red.600"
+          color="#173941"
           className={styles.cardText}
           //style={{fontFamily: 'Kumar One', color:'red'}}
         >

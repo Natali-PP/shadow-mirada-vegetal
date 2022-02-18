@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import styles from '../styles/NavBar.module.css' 
+import { motion } from "framer-motion";
 import image1 from '../assets/nav-group1.svg';
 import image2 from '../assets/nav-group2.svg';
 
@@ -12,7 +13,7 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
       mb={{ base: isLast ? 0 : 12}}
       mr={{ base: 0 }}
       display="block"
-      className={styles.spaceGrot}
+      className={styles.spaceGrot1}
     >
       <Link to={to}>{children}</Link>
     </Text>
@@ -42,7 +43,7 @@ const NavBar = (props) => {
     >
       <Box w="200px" px={4}>
         <Text fontSize="lg" fontWeight="bold">
-          Mirada Vegetal
+          <Link to="/">Mirada Vegetal </Link>
         </Text>
       </Box>
 
@@ -59,6 +60,14 @@ const NavBar = (props) => {
         fontSize="3xl"
         //h="99vh"
       >
+
+        {/*<motion.img 
+          src={image1} 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 9 }}
+        />*/}
         <Flex
           align="center"
           justify={['center']}
@@ -72,7 +81,7 @@ const NavBar = (props) => {
           //backgroundRepeat="no-repeat"
           //bgSize="cover"
         >
-          <MenuItem to="/">Home</MenuItem>
+          {/*<MenuItem to="/">Home</MenuItem>*/}
           <MenuItem to="/about">Nosotrxs</MenuItem>
           <MenuItem to="/Contacto">Contacto</MenuItem>
           {/*<MenuItem to="/" isLast>
