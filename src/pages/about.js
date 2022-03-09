@@ -8,17 +8,24 @@ import CardLight from '../components/cardLight.js';
 import plant from '../1.png';
 import flashiada1 from '../about-group.svg'
 import { motion } from "framer-motion";
-import styles from '../styles/Home.module.css';
+import styles from '../styles/About.module.css';
 
 const About = () => {
     return (
         <Layout>
+            <Box 
+                className={styles.main}
+                //backgroundImage={plant}
+                //backgroundPosition="center"
+                //backgroundRepeat="no-repeat"
+                //bgSize={["auto","auto","contain"]}
+            >
             <Box
                 backgroundImage={flashiada1}
                 backgroundPosition={["center","right"]}
                 backgroundRepeat="no-repeat"
                 bgSize="cover"
-                py={[6,6,8,16]}
+                py={[6,6,0,0]}
             >
             <Flex justify="center" align="center" direction="column">
             <Text mb={6} ml={[4,-56,-56,'19rem']} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es Mirada Vegetal? </Text>
@@ -33,13 +40,7 @@ const About = () => {
                 <Markdown style={{fontFamily: 'Space Grotesk'}} source={aboutText[0].content} escapeHtml={false} />
             </Text>
             </Box>
-            <Box 
-                className={styles.main}
-                //backgroundImage={plant}
-                //backgroundPosition="center"
-                //backgroundRepeat="no-repeat"
-                //bgSize={["auto","auto","contain"]}
-            >
+
 
             <svg
               viewBox={`0 0 ${window.innerWidth} ${window.innerHeight}`}

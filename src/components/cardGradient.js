@@ -23,7 +23,7 @@ export default function cardLight(props) {
          className={styles.borderGradient}
         //borderWidth="1px"
         //borderRadius="lg"
-        w={{ sm: '100%', md: '540px' }}
+        w={['100%', '540px','700px' ]}
         height={{ sm: '476px', md: '100%' }}
         direction={{ base: 'column', md: 'row' }}
         //bg="blue.50"
@@ -43,7 +43,7 @@ export default function cardLight(props) {
           alignItems="center"
           bg="pink.500"
           px={1}
-          py={2}
+          py={[2,2,24]}
           //pt={2}
         >
           <Heading fontSize={'2xl'} fontFamily={'body'} align="center" p={2} color={'green.300'} >
