@@ -1,74 +1,64 @@
-import React from "react";
 import {
-  Box,
-  Flex,
-  AspectRatio,
-  Image,
-  Text,
-  Link,
+  Badge,
   Button,
-  Stack
-} from "@chakra-ui/react";
-import styles from '../styles/components/cardGradient.module.css'
+  Center,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-function CardGradient(props) {
-  const { product, summary, longLine, bgradient, image } = props;
+import styles from '../styles/components/cardLight.module.css'
 
+import React from 'react'
+
+export default function cardLight(props) {
   return (
-    <Box
-      p={4}
-      display={{ base: "flex" }}
-      flexDirection={{base:"column",md:"row"}}
-      align={{ base: "center", md: "stretch" }}
-      //maxWidth="8xl"
-      //borderWidth={1}
-      margin={4}
-      bgGradient={bgradient}
-      w="90%"
-      //h={72}
-    >
-        <img
-          className={styles.imageCover}
-          //maxWidth="1000px"
-          //margin="auto"
-          //src="https://picsum.photos/id/237/250/250"
-          src={image}
-          alt={product}
-          //objetFit="contain"
-        />
+    <Center py={6}>
+<Link href={props.linkHref} isExternal>
       <Stack
-        align={{ base: "center", md: "stretch" }}
-        textAlign={{ base: "center", md: "left" }}
-        mt={{ base: 4, md: 0 }}
-        ml={{ md: 6 }}
-      >
-        <Text
-          //fontWeight="bold"
-          textTransform="uppercase"
-          fontSize={{ base: "2xl", md: "4xl" }}
-          letterSpacing="wide"
-          color="#173941"
-          className={styles.cardText}
-          //style={{fontFamily: 'Kumar One', color:'red'}}
+         className={styles.borderGradient}
+        //borderWidth="1px"
+        //borderRadius="lg"
+        w={{ sm: '100%', md: '540px' }}
+        height={{ sm: '476px', md: '100%' }}
+        direction={{ base: 'column', md: 'row' }}
+        //bg="blue.50"
+        boxShadow={'xl'}
+        padding={4}>
+        <Flex flex={1} bg="blue.200">
+          <Image
+            objectFit="cover"
+            boxSize="100%"
+            src={props.imgSrc}
+          />
+        </Flex>
+        <Stack
+          flex={1}
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          bg="pink.500"
+          px={1}
+          py={2}
+          //pt={2}
         >
-          {product}
-        </Text>
-        <Link
-          my={1}
-          display="block"
-          fontSize="md"
-          lineHeight="normal"
-          fontWeight="semibold"
-          href="#"
-        >
-          {summary}
-        </Link>
-        <Text my={2} color="gray.700">
-          {longLine}
-        </Text>
+          <Heading fontSize={'2xl'} fontFamily={'body'} align="center" p={2} color={'green.300'} >
+            {props.name} 
+          </Heading>
+
+          <Text
+            textAlign={'center'}
+            color={'gray.700'}
+            px={3}>
+            {props.description}
+          </Text>
+        </Stack>
       </Stack>
-    </Box>
+      </Link>
+    </Center>
   );
 }
-
-export default CardGradient;

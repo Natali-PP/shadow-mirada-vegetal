@@ -15,12 +15,6 @@ h1 {
     padding: 6rem 0rem 0rem 0rem;
 }
 
-.header {
-    background: navy;
-    color: lightblue;
-    padding: 10px 20px;
-}
-
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -30,8 +24,8 @@ h1 {
     text-align: center;
 }
 .layout{
-      background-color:#0B110D;
-      color:white;
+      background-color:white;
+      color:#0B110D;
 }
 
 .title {

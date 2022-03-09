@@ -23,7 +23,7 @@ export default function cardLight(props) {
         //borderWidth="1px"
         //borderRadius="lg"
         w={{ sm: '100%', md: '540px' }}
-        height={{ sm: '476px', md: '20rem' }}
+        height={{ sm: '476px', md: '100%' }}
         direction={{ base: 'column', md: 'row' }}
         //bg="blue.50"
         boxShadow={'xl'}
@@ -41,9 +41,11 @@ export default function cardLight(props) {
           justifyContent="center"
           alignItems="center"
           bg="pink.500"
-          p={1}
-          pt={2}>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          px={1}
+          py={2}
+          //pt={2}
+        >
+          <Heading fontSize={'2xl'} fontFamily={'body'} align="center" p={2}>
             {props.name} 
           </Heading>
           <Text fontWeight={600} color={'green.300'} size="sm" mb={4}>

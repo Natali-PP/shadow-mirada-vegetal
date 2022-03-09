@@ -12,32 +12,30 @@ import Effects from "../components/shader/Effects.js";
 import Hojas from "../styles/largas.png";
 import { motion } from "framer-motion";
 import useWindowDimensions from '../utils/useWindowDimensions.js'
+import CardLight from '../components/cardLight.js';
 
 const dataList = [
   {
     id: "1",
-    product: "•Cuerpo Temblor•",
-    summary: "10 de septiembre ",
-    longLine: "Registro de MANADA SIERRAS CHICAS III edición por @le_grabua. Nuevo encuentro con @anita_linder @valentinbailentin @eva_gou @francosapere. Consultas e inscripciones la.mirada.vegetal@gmail.com",
+    title: "•Cuerpo Temblor•",
+    summary: "Registro de MANADA SIERRAS CHICAS III edición por @le_grabua. Nuevo encuentro con @anita_linder @valentinbailentin @eva_gou @francosapere. Consultas e inscripciones la.mirada.vegetal@gmail.com",
     bgradient:
       "linear-gradient(90deg, rgba(66,85,255,1) 0%, rgba(255,109,77,1) 26%, rgba(132,255,159,1) 31%, rgba(228,210,144,1) 35%, rgba(255,90,54,1) 100%)",
       image: "./images/card1.jpg",
   },
   {
     id: "2",
-    product: "Archivo e imaginarios vivos. El cuerpo habitado que danza",
+    title: "Archivo e imaginarios vivos. El cuerpo habitado que danza",
     summary:
       "Sonoridades del movimiento en la práctica danzada |||Ensanchar e imaginar la lengua. Devenires del Proyecto CepiaAbierto",
-    longLine: "",
     bgradient:
       "linear-gradient(90deg, rgba(228,210,144,1) 0%, rgba(132,255,159,1) 26%, rgba(230,93,252,1) 53%)",   
       image: "./images/card2.jpg",
   },
   {
     id: "3",
-    product: "Manada sierras chicas iii Edición",
-    summary: "Sábado 14 de agosto",
-    longLine: "El encuentro consta de dos partes: una practica guiada de movimiento y un momento de improvisación colectiva. Todxs les presentes podrán participar de ambos segmentos.",
+    title: "Manada sierras chicas iii Edición",
+    summary: "El encuentro consta de dos partes: una practica guiada de movimiento y un momento de improvisación colectiva. Todxs les presentes podrán participar de ambos segmentos.",
     bgradient:
       "radial-gradient(circle, rgba(132,255,159,1) 0%, rgba(228,210,144,1) 24%, rgba(132,233,255,1) 47%, rgba(255,135,68,1) 76%)",      
       image: "./images/card3.jpg",
@@ -78,7 +76,7 @@ const Home = () => {
                                         zIndex:2,
                                     }}
                                 >
-                                    Mirada Vegetal
+                                    La Mirada Vegetal
                                 </p>
                             </Html>
                         </Suspense>
@@ -180,16 +178,24 @@ const Home = () => {
             <Container centerContent>
               <SimpleGrid className={styles.containerCardsGrad} columns={[1]}>
                 {dataList.map(function (data, index) {
-                  const { id, product, summary, longLine, bgradient, image} = data;
+                  const { id, title, summary, bgradient, image} = data;
                   return (
-                    <CardGradient
-                      key={id}
-                      product={product}
-                      summary={summary}
-                      longLine={longLine}
-                      bgradient={bgradient}
-                       image={image} 
+                      <CardGradient
+                        key={id}
+                        imgSrc={image}
+                        name={title}
+                        linkHref='https://chakra-ui.com'
+                        linkContent='@instagram'
+                        description={summary}
                     />
+                    /*<CardLight
+                        key={id}
+                        imgSrc={image}
+                        name={product}
+                        linkHref='https://chakra-ui.com'
+                        linkContent='@instagram'
+                        description={summary}
+                    />*/
                   );
                 })}
               </SimpleGrid>

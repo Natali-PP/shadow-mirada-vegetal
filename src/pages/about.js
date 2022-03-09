@@ -7,6 +7,8 @@ import flashiada from '../Group.png';
 import CardLight from '../components/cardLight.js';
 import plant from '../1.png';
 import flashiada1 from '../about-group.svg'
+import { motion } from "framer-motion";
+import styles from '../styles/Home.module.css';
 
 const About = () => {
     return (
@@ -31,13 +33,102 @@ const About = () => {
                 <Markdown style={{fontFamily: 'Space Grotesk'}} source={aboutText[0].content} escapeHtml={false} />
             </Text>
             </Box>
-
             <Box 
-                backgroundImage={plant}
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                bgSize={["auto","auto","contain"]}
+                className={styles.main}
+                //backgroundImage={plant}
+                //backgroundPosition="center"
+                //backgroundRepeat="no-repeat"
+                //bgSize={["auto","auto","contain"]}
             >
+
+            <svg
+              viewBox={`0 0 ${window.innerWidth} ${window.innerHeight}`}
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMinYMin meet"
+            >
+              <defs>
+                <linearGradient
+                  id="goldenGradient"
+                  gradientTransform="rotate(90)"
+                >
+                  <stop offset="5%" stopColor="gold" />
+                  <stop offset="95%" stopColor="red" />
+                </linearGradient>
+                <linearGradient id="redBlue" gradientTransform="rotate(45)">
+                  <stop offset="5%" stopColor="blue" />
+                  <stop offset="95%" stopColor="red" />
+                </linearGradient>
+                <linearGradient id="cyanYellow" gradientTransform="rotate(45)">
+                  <stop offset="5%" stopColor="#FFBB0D" />
+                  <stop offset="95%" stopColor="#3BC5CE" />
+                </linearGradient>
+              </defs>
+              <filter id="blurMe">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
+              </filter>
+              <motion.circle
+                style={{ filter: "blur(65px)" }}
+                r="12%"
+                cx="50%"
+                cy="20%"
+                fill="#7CCE7F"//verde
+                filter="url(#blurMe)"
+                animate={{ cx: "95%", cy: "75%" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 23,
+                }}
+              />
+              <motion.circle
+                style={{ filter: "blur(75px)" }}
+                r="12%"
+                cx="80%"
+                cy="50%"
+                fill="#E65DFC"
+                filter="url(#blurMe)"
+                animate={{ cx: "15%", cy: "25%"}}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 13,
+                }}
+              />
+                <motion.circle
+                style={{ filter: "blur(85px)" }}
+                r="12%"
+                cx="20%"
+                cy="50%"
+                fill="url('#cyanYellow')"
+                filter="url(#blurMe)"
+                animate={{ cx: "55%", cy: "75%"}}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 13,
+                }}
+              />
+                <motion.circle
+                style={{ filter: "blur(85px)" }}
+                r="12%"
+                cx="80%"
+                cy="20%"
+                fill="#949EFF"
+                filter="url(#blurMe)"
+                animate={{ cx: "90%", cy: "85%"}}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 13,
+                }}
+              />
+              <image style={{ filter: "blur(5px)" }} href={plant}></image>
+            </svg>
             <Heading mt={[6,4,8]} pt={[0,0,6]} align='center' style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']} >Somos Mirada Vegetal</Heading>
 
             <CardLight

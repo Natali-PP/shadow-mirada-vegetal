@@ -50,4 +50,12 @@
     transform: scale(1.5) translateX(-50%);
   }
 }
-
+.videoFlash{
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-1;
+}

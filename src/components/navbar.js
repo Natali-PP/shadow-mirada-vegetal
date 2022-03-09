@@ -1,11 +1,13 @@
 import React , { useState }from "react"
 import { Link } from "react-router-dom"
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Image } from '@chakra-ui/react';
 import styles from '../styles/NavBar.module.css' 
 import { motion } from "framer-motion";
 import image1 from '../assets/nav-group1.svg';
 import image2 from '../assets/nav-group2.svg';
+import videoSrc from '../assets/la mirada vegetal oct3.mp4';
+import ojito from '../assets/ojo-negro.png';
 
 const MenuItem = ({ children, isLast, to = '/' }) => {
   return (
@@ -14,6 +16,7 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
       mr={{ base: 0 }}
       display="block"
       className={styles.spaceGrot1}
+      fontSize={["4xl","5xl","6xl"]}
     >
       <Link to={to}>{children}</Link>
     </Text>
@@ -38,14 +41,15 @@ const NavBar = (props) => {
       //bg={show ? "pink.500" : "transparent"}
       bgGradient={show ? 'linear(to-r, #0b110d, pink.500)' : 'transparent'}
       //color={show ? "green.300" : "black"}
-      //color='black'
+      color='black'
       className={styles.fixedNav}
     >
-      <Box w="200px" px={4}>
-        <Text fontSize="lg" fontWeight="bold">
-          <Link to="/">Mirada Vegetal </Link>
+      <Flex w="300px" px={4} align="center">
+        <Image  boxSize="50px" src={ojito} alt="la mirada vegetal image" ></Image>
+        <Text fontSize="lg" fontWeight="bold" style={{fontFamily: 'BioRhyme'}}>
+          <Link to="/" >La Mirada Vegetal </Link>
         </Text>
-      </Box>
+      </Flex>
 
       <Box display={{ base: 'block'}} onClick={toggleMenu} px={4}>
         {show ? <CloseIcon /> : <HamburgerIcon />}
@@ -54,13 +58,16 @@ const NavBar = (props) => {
       <Box
         display={{ base: show ? 'block' : 'none'}}
         flexBasis={{ base: '100%'}}
-        bgGradient='linear(to-r, #0B110D, pink.500)'
-        //color="black"
+        //bgGradient='linear(to-r, #0B110D, pink.500)'
+        color="black"
+        bg
         fontWeight="bold"
         fontSize="3xl"
         //h="99vh"
       >
-
+      <video className={styles.videoFlash} autoPlay loop muted>
+          <source src={videoSrc} type='video/mp4' />
+      </video>
         {/*<motion.img 
           src={image1} 
           animate={{ rotate: 360 }}
@@ -75,7 +82,7 @@ const NavBar = (props) => {
           direction={'column'}
           py={[2, 2, 0, 0]}
           h="100vh"
-          className={styles.bgFlash}
+          //className={styles.bgFlash}
           //backgroundImage={image1, image2}
           //backgroundPosition={"center","center"}
           //backgroundRepeat="no-repeat"
