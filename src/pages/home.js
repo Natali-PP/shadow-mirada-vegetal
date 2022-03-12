@@ -65,10 +65,12 @@ const Home = () => {
                                     style={{
                                         margin: 0,
                                         align: "center",
+                                        textAlign: "center",
                                         transform: "translate(-48%, -50%)",
                                         color: "black",
                                         letterSpacing: "10px",
-                                        fontFamily: 'Kumar One',
+                                        fontFamily:'VT323',
+                                        //fontFamily: 'Kumar One',
                                                     //fontFamily: "Space Grotesk",
                                         //fontSize: `${width<520} ? "70px" : ${width>521 && width<1000} ? "120px": "150px" }`,
                                         fontSize: `${setFontWidth(width)}`,
@@ -76,7 +78,7 @@ const Home = () => {
                                         zIndex:2,
                                     }}
                                 >
-                                    La Mirada Vegetal
+                                   LA MIRADA VEGETAL 
                                 </p>
                             </Html>
                         </Suspense>

@@ -46,13 +46,14 @@ export default function cardLight(props) {
           py={[2,2,24]}
           //pt={2}
         >
-          <Heading fontSize={'2xl'} fontFamily={'body'} align="center" p={2} color={'green.300'} >
+          <Heading fontSize={'2xl'} fontFamily={'Kumar ONe'} align="center" p={2} color={'green.300'} >
             {props.name} 
           </Heading>
 
           <Text
             textAlign={'center'}
             color={'gray.700'}
+            fontFamily={'Work Sans'}
             px={3}>
             {props.description}
           </Text>
