@@ -40,7 +40,7 @@ export default function cardLight(props) {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          bg="pink.500"
+          bg="transparent"
           px={1}
           py={2}
           //pt={2}
@@ -48,7 +48,7 @@ export default function cardLight(props) {
           <Heading fontSize={'2xl'} fontFamily={'body'} align="center" p={2}>
             {props.name} 
           </Heading>
-          <Text fontWeight={600} color={'green.300'} size="sm" mb={4}>
+          <Text fontWeight={600} color={'#5be837'} size="sm" mb={4} style={{textShadow:'1px 1px 1px fuchsia'}} >
             <Link href={props.linkHref} isExternal>{props.linkContent}</Link>
           </Text>
           <Text

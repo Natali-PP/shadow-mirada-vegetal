@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Layout from "../components/layout";
 //import PostList from "../components/postlist"
-import { SimpleGrid, Container, Box } from "@chakra-ui/react";
+import { SimpleGrid, Container, Box, Text } from "@chakra-ui/react";
 //import "./pages.css"
 import CardGradient from "../components/cardGradient.js";
 import styles from "../styles/Home.module.css";
@@ -43,8 +43,19 @@ const dataList = [
 ];
 
 const setFontWidth = (width) =>{
-    if (width<520) return "70px"
+    if (width<520) return "100px"
     else if (width>521 && width<1000) return "120px" 
+    else return "150px"
+}
+
+const calcTop = (width) =>{
+    if (width<520) return "-37vh"
+    else if (width>521 && width<1000) return "-35vh" 
+    else return "150px"
+}
+const calcLeft = (width) =>{
+    if (width<520) return "-60vh"
+    else if (width>521 && width<1000) return "-35vh" 
     else return "150px"
 }
 
@@ -60,22 +71,32 @@ const Home = () => {
                         <Suspense fallback={null}>
                             <SphereThing position={[10, 10, 10]} />
 
-                            <Html>
+                            <Html
+                                style={{
+                                    position:'absolute', 
+                                    top:`calc(-35vh + ${setFontWidth(width)})`,
+                                    left:`calc(-60vw + ${setFontWidth(width)})`,
+                                }}
+                            >
                                 <p
                                     style={{
                                         margin: 0,
                                         align: "center",
                                         textAlign: "center",
-                                        transform: "translate(-48%, -50%)",
+                                        //transform: "translate(-48%, -50%)",
                                         color: "black",
-                                        letterSpacing: "10px",
+                                        //letterSpacing: "10px",
                                         fontFamily:'VT323',
                                         //fontFamily: 'Kumar One',
                                                     //fontFamily: "Space Grotesk",
                                         //fontSize: `${width<520} ? "70px" : ${width>521 && width<1000} ? "120px": "150px" }`,
                                         fontSize: `${setFontWidth(width)}`,
+                                        //fontSize: `5rem`,
                                         pointerEvents: "none",
-                                        zIndex:2,
+                                        //position:'absolute',
+                                        //top:`-${setFontWidth(width)}`,
+                                        //left:`-${setFontWidth(width)}`,
+                                        //zIndex:2,
                                     }}
                                 >
                                    LA MIRADA VEGETAL 
@@ -178,6 +199,7 @@ const Home = () => {
               <image style={{ filter: "blur(5px)" }} href={Hojas}></image>
             </svg>
             <Container centerContent>
+                <Text fontSize='6xl' style={{fontFamily: 'BioRhyme'}}>Próximas Actividades</Text>
               <SimpleGrid className={styles.containerCardsGrad} columns={[1]}>
                 {dataList.map(function (data, index) {
                   const { id, title, summary, bgradient, image} = data;

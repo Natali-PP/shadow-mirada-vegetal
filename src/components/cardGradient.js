@@ -41,12 +41,12 @@ export default function cardLight(props) {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          bg="pink.500"
+          bg="transparent"
           px={1}
           py={[2,2,24]}
           //pt={2}
         >
-          <Heading fontSize={'2xl'} fontFamily={'Kumar ONe'} align="center" p={2} color={'green.300'} >
+          <Heading fontSize={'2xl'} fontFamily={'Kumar ONe'} align="center" p={2} color={'#5be837'} style={{textShadow:'1px 1px 3px fuchsia'}} >
             {props.name} 
           </Heading>
 
