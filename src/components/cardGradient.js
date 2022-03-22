@@ -23,7 +23,7 @@ export default function cardLight(props) {
          className={styles.borderGradient}
         //borderWidth="1px"
         //borderRadius="lg"
-        w={['100%', '540px','700px' ]}
+        w={['100%', '540px','700px', '60vw', '55vw' ]}
         height={{ sm: '476px', md: '100%' }}
         direction={{ base: 'column', md: 'row' }}
         //bg="blue.50"

@@ -44,7 +44,7 @@ const dataList = [
 
 const setFontWidth = (width) =>{
     if (width<520) return "100px"
-    else if (width>521 && width<1000) return "120px" 
+    else if (width>521 && width<1000) return "110px" 
     else return "150px"
 }
 
@@ -65,19 +65,50 @@ const Home = () => {
     <div>
       <Layout>
         <div className={styles.container}>
+            <div style={{position:'absolute', display:'flex',alignItems:'center',justifyContent:'center',
+                top:window.innerWidth > 800? '45vh': '38vh'}}><p
+                                    style={{
+                                        margin: 0,
+                                        align: "center",
+                                        textAlign: "center",
+                                        //transform: "translate(-48%, -50%)",
+                                        color: "black",
+                                        //letterSpacing: "10px",
+                                        fontFamily:'VT323',
+                                        //fontFamily: 'Kumar One',
+                                                    //fontFamily: "Space Grotesk",
+                                        //fontSize: `${width<520} ? "70px" : ${width>521 && width<1000} ? "120px": "150px" }`,
+                                        fontSize: `${setFontWidth(width)}`,
+                                        //fontSize: `5rem`,
+                                        pointerEvents: "none",
+                                        //position:'absolute',
+                                        //top:`-${setFontWidth(width)}`,
+                                        //left:`-${setFontWidth(width)}`,
+                                        //zIndex:2,
+                                        whiteSpace: window.innerWidth > 800? 'nowrap' : ''  ,
+                                    }}
+                                >
+                                   LA MIRADA VEGETAL 
+                                </p>
+
+            </div>
           <Canvas camera={{ position: [15, 15, 20] }}>
                         <ambientLight />
                         <pointLight position={[10, 10, 10]} />
                         <Suspense fallback={null}>
                             <SphereThing position={[10, 10, 10]} />
 
-                            <Html
+                            {/*<Html
                                 style={{
                                     position:'absolute', 
-                                    top:`calc(-35vh + ${setFontWidth(width)})`,
-                                    left:`calc(-60vw + ${setFontWidth(width)})`,
+                                    //top:window.innerWidth < 800?`calc(-35vh + ${setFontWidth(width)})` : `calc(-25vh + ${setFontWidth(width)})`,
+                                    //left:window.innerWidth < 1000?`calc(-60vw + ${setFontWidth(width)})`: '-35vw',
+                                    display:'flex',
+                                    alignItems:'center',
+                                    justifyContent:'center',
                                 }}
                             >
+                                <div>
                                 <p
                                     style={{
                                         margin: 0,
@@ -97,11 +128,13 @@ const Home = () => {
                                         //top:`-${setFontWidth(width)}`,
                                         //left:`-${setFontWidth(width)}`,
                                         //zIndex:2,
+                                        whiteSpace: window.innerWidth > 800? 'nowrap' : ''  ,
                                     }}
                                 >
                                    LA MIRADA VEGETAL 
                                 </p>
-                            </Html>
+                                    </div>
+                            </Html>*/}
                         </Suspense>
                         <OrbitControls
                             minPolarAngle={Math.PI / 10}
@@ -196,10 +229,10 @@ const Home = () => {
                   duration: 13,
                 }}
               />
-              <image style={{ filter: "blur(5px)" }} href={Hojas}></image>
+                <image ml={[0,0,80]} style={{ filter: "blur(5px)", marginLeft:"15vw" }} href={Hojas}></image>
             </svg>
             <Container centerContent>
-                <Text fontSize='6xl' style={{fontFamily: 'BioRhyme'}}>Próximas Actividades</Text>
+                <Text fontSize='4xl' style={{fontFamily: 'BioRhyme'}}>Próximas Actividades</Text>
               <SimpleGrid className={styles.containerCardsGrad} columns={[1]}>
                 {dataList.map(function (data, index) {
                   const { id, title, summary, bgradient, image} = data;

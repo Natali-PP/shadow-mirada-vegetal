@@ -2,7 +2,7 @@ import React from "react"
 import Markdown from "react-markdown"
 import aboutText from "../pages.json"
 import Layout from "../components/layout"
-import { Text, Box, Flex, Heading, Image } from '@chakra-ui/react'
+import { Text, Box, Flex, Image } from '@chakra-ui/react'
 import flashiada from '../Group.png';
 import CardLight from '../components/cardLight.js';
 import plant from '../1.png';
@@ -29,12 +29,12 @@ const About = () => {
                 py={[6,6,0,0]}
             >
             <Flex justify="center" align="center" direction="column">
-            <Text mb={6} ml={[4,-56,-56,'19rem']} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal? </Text>
-            <Text mb={6} ml={[14,0,0,-6]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal?</Text>
-            <Text mb={6} ml={[24,56,56,0]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','74px']}>¿Que es La Mirada Vegetal?</Text>
-            <Text mb={6} ml={[4,-56,56,0]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','74px']}>¿Que es La Mirada Vegetal? </Text>
-            <Text mb={6} ml={[14,0,0,-6]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal?</Text>
-                <Text mb={6} ml={[24,56,-56,'19rem']} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']} >¿Que es La Mirada Vegetal?</Text>
+            <Text mb={6} ml={[-4,-56,-56,'19rem']} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal? </Text>
+            <Text mb={6} ml={[10,0,0,-6]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal?</Text>
+            <Text mb={6} ml={[-8,56,56,0]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','74px']}>¿Que es La Mirada Vegetal?</Text>
+            <Text mb={6} ml={[-8,-56,56,0]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','74px']}>¿Que es La Mirada Vegetal? </Text>
+            <Text mb={6} ml={[10,0,0,-6]} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']}>¿Que es La Mirada Vegetal?</Text>
+                <Text mb={6} ml={[-4,56,-56,'19rem']} style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']} >¿Que es La Mirada Vegetal?</Text>
 
                 </Flex>
             <Text px={8}>
@@ -131,7 +131,10 @@ const About = () => {
               />
               <image style={{ filter: "blur(5px)" }} href={plant}></image>
             </svg>
-            <Heading mt={[6,4,8]} pt={[0,0,6]} align='center' style={{fontFamily: 'BioRhyme'}} fontSize={['24px','34px','34px','48px']} >Somos La Mirada Vegetal</Heading>
+            <Text mt={[6,4,8]} pt={[0,0,6]} align='center' style={{fontFamily: 'BioRhyme'}} 
+                fontSize="2xl"
+                //fontSize={['24px','34px','34px','48px']} 
+            >Somos La Mirada Vegetal</Text>
 
             <CardLight
                 imgSrc='https://images.pexels.com/photos/2530808/pexels-photo-2530808.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
