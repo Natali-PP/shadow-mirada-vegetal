@@ -167,15 +167,15 @@ const Home = () => {
                 </linearGradient>
               </defs>
               <filter id="blurMe">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
               </filter>
               <motion.circle
-                style={{ filter: "blur(65px)" }}
-                r="12%"
+                style={{ filter: "blur(6px)" }}
+                r="5%"
                 cx="50%"
                 cy="20%"
-                fill="#7CCE7F"//verde
-                filter="url(#blurMe)"
+                fill="url('#redBlue')"//verde
+                //filter="url(#blurMe)"
                 animate={{ cx: "95%", cy: "75%" }}
                 transition={{
                   repeat: Infinity,
@@ -185,12 +185,42 @@ const Home = () => {
                 }}
               />
               <motion.circle
-                style={{ filter: "blur(75px)" }}
-                r="12%"
+                style={{ filter: "blur(6px)" }}
+                r="1%"
+                cx="10%"
+                cy="10%"
+                fill="#7CCE7F"//verde
+                //filter="url(#blurMe)"
+                animate={{ cx: "5%", cy: "75%" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 23,
+                }}
+              />
+                <motion.circle
+                style={{ filter: "blur(6px)" }}
+                r="10%"
+                cx="50%"
+                cy="72%"
+                fill="url('#goldenGradient')"//verde
+                //filter="url(#blurMe)"
+                animate={{ cx: "90%", cy: "90%" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  duration: 23,
+                }}
+              />
+              <motion.circle
+                style={{ filter: "blur(7px)" }}
+                r="2%"
                 cx="80%"
                 cy="50%"
                 fill="#E65DFC"
-                filter="url(#blurMe)"
+                //filter="url(#blurMe)"
                 animate={{ cx: "15%", cy: "25%"}}
                 transition={{
                   repeat: Infinity,
@@ -200,12 +230,12 @@ const Home = () => {
                 }}
               />
                 <motion.circle
-                style={{ filter: "blur(85px)" }}
-                r="12%"
+                style={{ filter: "blur(8px)" }}
+                r="2%"
                 cx="20%"
                 cy="50%"
                 fill="url('#cyanYellow')"
-                filter="url(#blurMe)"
+                //filter="url(#blurMe)"
                 animate={{ cx: "55%", cy: "75%"}}
                 transition={{
                   repeat: Infinity,
@@ -215,12 +245,12 @@ const Home = () => {
                 }}
               />
                 <motion.circle
-                style={{ filter: "blur(85px)" }}
-                r="12%"
+                style={{ filter: "blur(8px)" }}
+                r="2%"
                 cx="80%"
                 cy="20%"
                 fill="#949EFF"
-                filter="url(#blurMe)"
+                //filter="url(#blurMe)"
                 animate={{ cx: "90%", cy: "85%"}}
                 transition={{
                   repeat: Infinity,

@@ -6,7 +6,7 @@ import styles from '../styles/NavBar.module.css'
 import { motion } from "framer-motion";
 import image1 from '../assets/nav-group1.svg';
 import image2 from '../assets/nav-group2.svg';
-import videoSrc from '../assets/la mirada vegetal oct3.mp4';
+import videoSrc from '../assets/Secuencia 01_3.mp4';
 import ojito from '../assets/ojo-negro.png';
 
 const MenuItem = ({ children, isLast, to = '/' }) => {
@@ -17,6 +17,7 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
       display="block"
       className={styles.spaceGrot1}
       fontSize={["4xl","5xl","6xl"]}
+      color="white"
     >
       <Link to={to}>{children}</Link>
     </Text>
