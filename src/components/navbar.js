@@ -24,6 +24,21 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
   );
 };
 
+const MenuItemExternal = ({ children, isLast, to }) => {
+  return (
+    <Text
+      mb={{ base: isLast ? 0 : 12}}
+      mr={{ base: 0 }}
+      display="block"
+      className={styles.spaceGrot1}
+      fontSize={["4xl","5xl","6xl"]}
+      color="white"
+    >
+      <a href={to}>{children}</a>
+    </Text>
+  );
+};
+
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const toggleMenu = () => setShow(!show);
@@ -83,15 +98,11 @@ const NavBar = (props) => {
           direction={'column'}
           py={[2, 2, 0, 0]}
           h="100vh"
-          //className={styles.bgFlash}
-          //backgroundImage={image1, image2}
-          //backgroundPosition={"center","center"}
-          //backgroundRepeat="no-repeat"
-          //bgSize="cover"
+
         >
           {/*<MenuItem to="/">Home</MenuItem>*/}
           <MenuItem to="/about">Nosotrxs</MenuItem>
-          <MenuItem to="/Contacto">Contacto</MenuItem>
+          <MenuItemExternal to="https://www.instagram.com/la.mirada.vegetal/">Contacto</MenuItemExternal>
           {/*<MenuItem to="/" isLast>
             Search
           </MenuItem>*/}
